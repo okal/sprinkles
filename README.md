@@ -4,6 +4,12 @@ Sprinkles makes it easy to share configuration files between local dev
 environments without leaking private information. No more passwords in Slack
 PMs, no more API keys in VCS.
 
+# Installation
+
+```shell script
+pip install sprinkles-config
+```
+
 # Usage
 
 Sprinkles reads secrets from AWS secrets manager, and binds them to a template

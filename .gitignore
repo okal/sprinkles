@@ -2,4 +2,5 @@
 !.gitignore
 !README.md
 !sprinkles
+!setup.py
 *pyc
