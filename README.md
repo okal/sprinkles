@@ -36,7 +36,8 @@ sprinkles --template application.properties.j2 --secret-arn arn:aws:secretsmanag
 ## Config file option
 
 Sprinkles also makes it possible to have a set of defaults (tracked in VCS).
-Add a .sprinklesrc file in your project root
+Add a .sprinklesrc file in your project root. Simply run `sprinkles` in the
+project root to initialize the config.
 
 
 .sprinklesrc
