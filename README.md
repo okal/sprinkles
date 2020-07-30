@@ -7,12 +7,15 @@ PMs, no more API keys in VCS.
 # Usage
 
 Sprinkles reads secrets from AWS secrets manager, and binds them to a template
-you provide. The templating is based on Jinja, making it flexible enough to
+you provide. The templating is based on Jinja2¹, making it flexible enough to
 work with any text-based configuration format you may be using. Anything from
 .env files, to Java properties, to yaml.
 
 It has a simple param based CLI API, but can also be executed against a config
-file to encourage reuse.
+file to encourage reuse. The config format is TOML-based².
+
+NOTE: Sprinkles will use the AWS profile/credentials configured in the calling shell
+context, using the standard environment variables³.
 
 ## CLI
 
@@ -48,8 +51,14 @@ arn = "arn:aws:secretsmanager:<region>:<account-id-number>:secret:<secret-name>"
 [files]
   [files.docker-env]
     template = "sprinkles-templates/.env.sprinkles"
-    output = ".env"
+    target = ".env"
   [files.application-properties]
     template = "sprinkles-templates/application.properties.sprinkles"
-    output = "src/main/com/example/resources/application-dev.properties"
+    target = "src/main/com/example/resources/application-dev.properties"
 ```
+
+# References
+
+1. Jinja2: https://jinja.palletsprojects.com/en/2.11.x/
+2. TOML: https://github.com/toml-lang/toml
+3. AWS Configuration: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
