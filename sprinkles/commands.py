@@ -1,7 +1,7 @@
 import click
 import tomlkit
-from secrets import get_values
-from templating import merge
+from sprinkles.secrets import get_values
+from sprinkles.templating import merge
 
 
 @click.command()
