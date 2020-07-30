@@ -41,14 +41,14 @@ Add a .sprinklesrc file in your project root
 
 .sprinklesrc
 ```toml
-[secret-arn]
-arn:aws:secretsmanager:<region>:<account-id-number>:secret:<secret-name>
+[secret]
+arn = "arn:aws:secretsmanager:<region>:<account-id-number>:secret:<secret-name>"
 
 [files]
   [files.docker-env]
-    template = sprinkles-templates/.env.sprinkles
-    output = .env
+    template = "sprinkles-templates/.env.sprinkles"
+    output = ".env"
   [files.application-properties]
-    template = sprinkles-templates/application.properties.sprinkles
-    output = src/main/com/example/resources/application-dev.properties
+    template = "sprinkles-templates/application.properties.sprinkles"
+    output = "src/main/com/example/resources/application-dev.properties"
 ```
