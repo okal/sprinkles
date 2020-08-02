@@ -1,7 +1,7 @@
 import click
 import tomlkit
-from _secrets import get_values
-from _templating import render
+from ._secrets import get_values
+from ._templating import render
 
 
 @click.command()
