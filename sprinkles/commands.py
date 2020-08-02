@@ -1,7 +1,7 @@
 import click
 import tomlkit
-from sprinkles.secrets import get_values
-from sprinkles.templating import merge
+from _secrets import get_values
+from _templating import render
 
 
 @click.command()
@@ -25,24 +25,11 @@ def generate_config(template, target, secret_arn, config):
                         target=target_path
                     )
                 )
-                with open(files['template'], 'r') as template_file:
-                    template_string = template_file.read()
-                    output = merge(template_string, values)
-                    with open(files['target'], 'w') as target_file:
-                        target_file.write(output)
+                render(template_path, values, target_path)
 
     elif secret_arn is not None and template is not None:
         values = get_values(secret_arn)
-        with open(template, 'r') as template_file:
-            template_string = template_file.read()
-            output = merge(template_string, values)
-
-            if target is not None:
-                with open(target, 'w') as target_file:
-                    target_file.write(output)
-
-            else:
-                click.echo(output)
+        render(template, values, target)
 
 
 if __name__ == '__main__':
