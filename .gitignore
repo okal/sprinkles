@@ -1,5 +1,6 @@
-.sprinklesrc
-examples
 __pycache__
 .idea
 .python-version
+.sprinklesrc
+dist
+examples
