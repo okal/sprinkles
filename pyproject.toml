@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sprinkles-config"
-version = "0.1.3"
+version = "0.1.4"
 description = "Generate config files from AWS Secrets"
 authors = ["Okal Otieno <okal@justokal.com>"]
 license = "MIT"

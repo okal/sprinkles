@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/sprinkles-config.svg)](https://badge.fury.io/py/sprinkles-config)
+
 # sprinkles
 
 Sprinkles makes it easy to share configuration files between local dev
@@ -9,6 +11,8 @@ PMs, no more API keys in VCS.
 ```shell script
 pip install sprinkles-config
 ```
+
+Please note that sprinkles has only been tested for Python versions >= 3.6.
 
 # Usage
 
